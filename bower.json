@@ -1,0 +1,23 @@
+{
+  "name": "object-subset",
+  "version": "0.0.2",
+  "homepage": "https://github.com/Amberlamps/object-subset",
+  "authors": [
+    "Amberlamps <alexander.behrens.84@gmail.com>"
+  ],
+  "description": "Object-set is a tool to conveniently create a subset of a given tool by defining corresponding fields.",
+  "main": "lib/index.js",
+  "keywords": [
+    "object",
+    "subset",
+    "lookup"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
