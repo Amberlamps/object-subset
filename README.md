@@ -6,7 +6,9 @@ Object-subset is a tool to conveniently create a subset of a given tool by defin
 
 ## Install
 
-```npm install object-subset```
+```
+npm install object-subset
+```
 
 ## Usage
 
