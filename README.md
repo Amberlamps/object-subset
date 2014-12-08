@@ -32,8 +32,8 @@ var doc = {
 
 var keywords = [
   'user.name',
-  'user.name.children.name',
-  'user.name.children.age'
+  'user.children.name',
+  'user.children.age'
 ];
 ```
 
@@ -41,7 +41,7 @@ var keywords = [
 
 In this example our database is Elastic Search. ES is always also returning information like `_id`, `_index` and `_type`. It is in your interest to not make those information public in order to hide how you operate internally. Furthermore ES is capable of returning a large amount of data in an insanely short amount of time. But in a lot of cases we only need a small portion of that. In order to keep our payload small we should only select only the information we need.
 
-```javascript```
+```javascript
 var objectSubset = require('object-subset');
 
 var doc = {
