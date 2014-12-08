@@ -4,10 +4,20 @@
 
 Object-subset is a tool to conveniently create a subset of a given tool by defining corresponding fields. This is incredibly helpful if you are serving an API or other end point that is fetching data from your MongoDB, Elastic Search or any other database that is at least able to return the results as JSON. In most cases you do not want to return the raw data because first of all it may contain information that is not meant for the public and secondly just because we can, does not mean we should put an unnecessary high payload on the wire.
 
+Object-subset has *no dependencies* and is very lightweight with only *674 Bytes* in its minified version.
+
 ## Install
 
+### npm
+
 ```
-npm install object-subset
+npm install object-subset --save
+```
+
+### bower
+
+```
+bower install object-subset --save
 ```
 
 ## Usage
@@ -92,3 +102,28 @@ This will return the following:
   }
 }
 ```
+
+## It´s not a bug, it´s a feature!
+
+If a parent has children that are also present in the keywords array, the parent as well as its children is rendered empty. If you want the parent fully exposed, you have to remove all its children from the array. Following keywords:
+
+```javascript
+var keywords = [
+  '_source',
+  '_source.name',
+  '_source.children.name',
+  '_source.children.age'
+];
+```
+
+will return
+
+```json
+{}
+```
+
+One might argue that the module should return the entire `_source` object as the children are part of it anyway. That might make sense, but here are some very good arguments why this is not a good idea:
+
+- There might always be a slip up, a mistake. Somebody might add a parent by accident. You might not notice additional attributes in the output as you or your clients are not using them, but everyone will immeditaly notice when attributes are missing.
+- If you want an attribute and all its children fully exposed, it does not make sense to list the children individually. It is redundant and you do not want to [repeat yourself](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+- Exposing sensitive data by accident will not happen.
