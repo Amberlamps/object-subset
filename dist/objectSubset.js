@@ -4,10 +4,16 @@
  * User: Alexander Behrens <alexander.behrens.84@gmail.com>
  */
 
-var createSubset = (function() {
+(function() {
 
 
   'use strict';
+
+  if (module && module.exports) {
+    module.exports = createSubset;
+  } else if (window) {
+    window.objectSubset = createSubset;
+  }
 
 
   /**
@@ -109,9 +115,4 @@ var createSubset = (function() {
 
   }
 
-
-  return createSubset;
-
 })();
-
-module.exports = createSubset;

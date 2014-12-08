@@ -1,4 +1,4 @@
-var objectSubset = require('../lib');
+var objectSubset = require('../dist');
 
 var doc = {
   _id: 1,

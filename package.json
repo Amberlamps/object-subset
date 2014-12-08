@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "object-subset is a tool to conveniently create a subset of a given tool by defining corresponding fields.",
   "author": "Amberlamps <alexander.behrens.84@gmail.com>",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha test/"
   },
@@ -24,6 +24,8 @@
   "analyze": true,
   "license": "MIT",
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.6.0",
     "mocha": "^2.0.1"
   }
 }
