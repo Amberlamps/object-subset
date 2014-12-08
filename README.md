@@ -4,7 +4,7 @@
 
 Object-subset is a tool to conveniently create a subset of a given tool by defining corresponding fields. This is incredibly helpful if you are serving an API or other end point that is fetching data from your MongoDB, Elastic Search or any other database that is at least able to return the results as JSON. In most cases you do not want to return the raw data because first of all it may contain information that is not meant for the public and secondly just because we can, does not mean we should put an unnecessary high payload on the wire.
 
-Object-subset has *no dependencies* and is very lightweight with only *674 Bytes* in its minified version.
+Object-subset has **no dependencies** and is very lightweight with only **674 Bytes** in its minified version.
 
 ## Install
 
