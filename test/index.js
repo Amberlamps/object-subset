@@ -1,38 +1,30 @@
 var objectSubset = require('../lib');
 
 var doc = {
-  _id: '1',
-  _index: 'twitter_201411',
-  _type: 'tweet',
+  _id: 1,
+  _type: 'user',
+  _index: 'users',
   _source: {
-    text: 'hello world',
-    tags: [{
-      name: 'bvb',
-      secret: 1
-    }, {
-      secret: 2
+    name: 'John',
+    age: 42,
+    creditCard: [{
+      type: 'VISA',
+      cardNumber: '4532043405899708'
     }],
-    nested: {
-      obj: {
-        value: 1,
-        secret: 2
-      }
-    },
-    nestedArray: [{
-      user: [{
-        name: 'alex'
-      }]
+    children: [{
+      name: 'Jane',
+      age: 9
+    }, {
+      name: 'Frank',
+      age: 13
     }]
   }
 };
 
 var keywords = [
-  '_id',
-  '_type',
-  '_source.text',
-  '_source.tags.name',
-  '_source.nested.obj.value',
-  '_source.nestedArray.user.name'
+  '_source.name',
+  '_source.children.name',
+  '_source.children.age'
 ];
 
 describe('Object subset', function() {
@@ -40,6 +32,7 @@ describe('Object subset', function() {
   describe('Create subset', function() {
     it('should run without errors', function(done) {
       var subset = objectSubset(keywords, doc);
+      console.log(JSON.stringify(subset));
       done();
     });
   });

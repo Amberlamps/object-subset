@@ -4,6 +4,9 @@
   "description": "object-subset is a tool to conveniently create a subset of a given tool by defining corresponding fields.",
   "author": "Amberlamps <alexander.behrens.84@gmail.com>",
   "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Amberlamps/object-subset.git"
